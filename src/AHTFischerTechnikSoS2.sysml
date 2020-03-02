@@ -1,5 +1,5 @@
 /**
- * This is the generic version of the Norway System of System at Unger
+ * This is the generic version of the Fische Tecknik plant
  */
  package AHTFischerTechnikSoS2 {
  	import AHTProfileLib::*;
