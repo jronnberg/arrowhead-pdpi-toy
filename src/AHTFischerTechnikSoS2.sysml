@@ -1,13 +1,13 @@
 /**
  * This is the generic version of the Norway System of System at Unger
  */
- package AHTFischerTechnikSoS {
+ package AHTFischerTechnikSoS2 {
  	import AHTProfileLib::*;
 	import AHTCoreLib::*;
 	import ScalarValues::*;
 	import AHTFischerTechnikAppSystem::*;
  	
- 	block FischerTechnikSoS :> ArrowheadCoreSoS {
+ 	block FischerTechnikSoS2 :> ArrowheadCoreSoS {
  		part cloudUploader:CloudUploader subsets systems;
  		part dataStorage:DataStorage subsets systems;
  		part sensor1:PressureSensor1 subsets systems;
