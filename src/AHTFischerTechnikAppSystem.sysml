@@ -1,7 +1,7 @@
-/** This is a toy mockup of the Fischer Technik plant for Arrowhead Framework */
+/**
+ * This is the generic version of a toy muckup of the Fische Tecknik plant
+ */
 package AHTFischerTechnikAppSystem {
-	// The use-case is for Productive4.0 and Arrowhead Tools
-	// This is focusing on storing sensor values in a cloud
 	import AHTProfileLib::*;
 	import AHTCoreLib::*;
 	import ScalarValues::*;
@@ -54,17 +54,28 @@ package AHTFischerTechnikAppSystem {
 		unit = "Boolean";
 	}
 	
-	block LightSensor1 :> LightSensor {
-		location = "Start of first conveyor";
+ 	block FischerTechnikParts :> ArrowheadCoreSoS {
+ 		// Declare all sensors and actuators
+ 		part cloudUploader:CloudUploader subsets systems;
+ 		part dataStorage:DataStorage subsets systems;
+ 		part lightSensor1:LightSensor subsets systems {
+			location = "Start of first conveyor";
+ 		}
+ 		part lightSensor2:LightSensor subsets systems {
+			location = "End of last conveyor";
+ 		}
+ 		part pressureSensor1:PressureSensor subsets systems {
+			location = "Start of first conveyor";
+ 		}
+ 		
+ 		// Then we need to connect the application systems to the core systems.
+ 		// This should be done for all systems in all variants
+ 		connect lightSensor1::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect lightSensor2::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect pressureSensor1::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect dataStorage::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect cloudUploader::orchestrationService to orchestration::orchestrationService;
+ 		
 	}
-
-	block LightSensor2 :> LightSensor {
-		location = "End of last conveyor";
-	}
-
-	block PressureSensor1 :> PressureSensor {
-		location = "Start of first conveyor";
-	}
-
-
+	
 }
