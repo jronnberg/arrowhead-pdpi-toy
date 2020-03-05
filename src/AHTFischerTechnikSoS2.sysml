@@ -10,9 +10,21 @@
 	import AHTFischerTechnikAppSystem::*;
  	
  	block FischerTechnikSoS2 :> FischerTechnikParts {
+ 		part sensor_I5_2:PushButton subsets systems {
+			location = "slider 1";
+ 		}
+
   		// Connect all the systems according to plan
- 		connect cloudUploader::sensorValue to pressureSensor1::sensorValue;
- 		connect cloudUploader::sensorValue to lightSensor2::sensorValue;
- 		connect cloudUploader::sensorValueStorage to dataStorage::sensorValueStorage;
+ 		connect cloudUploader::sensorValue to sensor_I1::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I2::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I3::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I4::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I5::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I6::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I7::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I8::sensorValue;
+ 		connect cloudUploader::sensorValue to sensor_I9::sensorValue;
+
+ 		connect cloudUploader::sensorValue to sensor_I5_2::sensorValue;
  	}
  }

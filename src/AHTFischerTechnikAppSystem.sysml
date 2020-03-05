@@ -26,7 +26,6 @@ package AHTFischerTechnikAppSystem {
 
 		sensorType:String;
 		location:String;
-		unit:String;	
 	}
 	
 	block DataStorage :> SysDef {
@@ -40,42 +39,63 @@ package AHTFischerTechnikAppSystem {
 		port sensorValue:~SensorValue subsets services; // consuming the SensorValueService
 	}
 	
-	block LightSensor :> Sensor {
-		systemDescription = "uri to description of Light sensor";
-
-		sensorType = "Light beam sensor";
-		unit = "Boolean";
+	block Phototransistor :> Sensor {
+		sensorType = "Phototransistor";
 	}
 	
-	block PressureSensor :> Sensor {
-		systemDescription = "uri to description of Pressure sensor";
-
-		sensorType = "Pressure sensor";
-		unit = "Boolean";
+	block PushButton :> Sensor {
+		sensorType = "Push-button";
 	}
 	
  	block FischerTechnikParts :> ArrowheadCoreSoS {
  		// Declare all sensors and actuators
  		part cloudUploader:CloudUploader subsets systems;
  		part dataStorage:DataStorage subsets systems;
- 		part lightSensor1:LightSensor subsets systems {
-			location = "Start of first conveyor";
+ 		part sensor_I1:PushButton subsets systems {
+			location = "slider 1 front";
  		}
- 		part lightSensor2:LightSensor subsets systems {
-			location = "End of last conveyor";
+ 		part sensor_I2:PushButton subsets systems {
+			location = "slider 1 rear";
  		}
- 		part pressureSensor1:PressureSensor subsets systems {
-			location = "Start of first conveyor";
+ 		part sensor_I3:PushButton subsets systems {
+			location = "slider 2 front";
+ 		}
+ 		part sensor_I4:PushButton subsets systems {
+			location = "slider 2 rear";
+ 		}
+ 		part sensor_I5:Phototransistor subsets systems {
+			location = "slider 1";
+ 		}
+ 		part sensor_I6:Phototransistor subsets systems {
+			location = "milling machine";
+ 		}
+ 		part sensor_I7:Phototransistor subsets systems {
+			location = "loading station";
+ 		}
+ 		part sensor_I8:Phototransistor subsets systems {
+			location = "drilling machine";
+ 		}
+ 		part sensor_I9:Phototransistor subsets systems {
+			location = "conveyor belt swap";
  		}
  		
  		// Then we need to connect the application systems to the core systems.
  		// This should be done for all systems in all variants
- 		connect lightSensor1::serviceDiscovery to service_registry::serviceDiscovery;
- 		connect lightSensor2::serviceDiscovery to service_registry::serviceDiscovery;
- 		connect pressureSensor1::serviceDiscovery to service_registry::serviceDiscovery;
  		connect dataStorage::serviceDiscovery to service_registry::serviceDiscovery;
+
  		connect cloudUploader::orchestrationService to orchestration::orchestrationService;
- 		
+
+ 		connect sensor_I1::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I2::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I3::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I4::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I5::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I6::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I7::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I8::serviceDiscovery to service_registry::serviceDiscovery;
+ 		connect sensor_I9::serviceDiscovery to service_registry::serviceDiscovery;
+
+ 		connect cloudUploader::sensorValueStorage to dataStorage::sensorValueStorage;
 	}
 	
 }
