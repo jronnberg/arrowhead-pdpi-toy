@@ -70,7 +70,7 @@
 		},
 		{
 			"systemName": "sensor_I4",
-			"metadata": { "sensorType": "Push-button", "location": "slider 2 read" },
+			"metadata": { "sensorType": "Push-button", "location": "slider 2 rear" },
 			"ports": [
 				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService", "conjugated": false }	
