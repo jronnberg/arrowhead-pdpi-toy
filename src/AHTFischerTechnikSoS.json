@@ -36,7 +36,6 @@
 		},
 		{
 			"systemName": "cloudUploader",
-			"metadata": { "sensorType": "Push-button", "location": "slider 1 front" },
 			"ports": [
 				{ "portName": "orchestrationService", "serviceDefinition": "OrchestrationService", "conjugated": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService", "conjugated": true },
