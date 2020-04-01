@@ -10,7 +10,7 @@
 		{
 			"systemName": "Authorization",
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "tokenGeneration", "serviceDefinition": "Token Generation"},
 				{ "portName": "authorizationControl", "serviceDefinition": "Authorization Control"}	
 			]
@@ -18,28 +18,28 @@
 		{
 			"systemName": "Orchestraztion",
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
-				{ "portName": "tokenGeneration", "serviceDefinition": "Token Generation", "conjugated": true },
-				{ "portName": "authorizationControl", "serviceDefinition": "Authorization Control", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
+				{ "portName": "tokenGeneration", "serviceDefinition": "Token Generation", "consumer": true },
+				{ "portName": "authorizationControl", "serviceDefinition": "Authorization Control", "consumer": true },	
 				{ "portName": "orchestrationService", "serviceDefinition": "OrchestrationService"},	
 				{ "portName": "orchestrationStoreManagement", "serviceDefinition": "OrchestrationStoreManagement"},	
-				{ "portName": "orchestrationPush", "serviceDefinition": "OrchestrationPush", "conjugated": true },
-				{ "portName": "orchestrationCapabiliteis", "serviceDefinition": "OrchestrationCapabiliteis", "conjugated": true }	
+				{ "portName": "orchestrationPush", "serviceDefinition": "OrchestrationPush", "consumer": true },
+				{ "portName": "orchestrationCapabiliteis", "serviceDefinition": "OrchestrationCapabiliteis", "consumer": true }	
 			]
 		},
 		{
 			"systemName": "dataStorage",
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValueStorage", "serviceDefinition": "SensorValueStorageService"}	
 			]
 		},
 		{
 			"systemName": "cloudUploader",
 			"ports": [
-				{ "portName": "orchestrationService", "serviceDefinition": "OrchestrationService", "conjugated": true },	
-				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService", "conjugated": true },
-				{ "portName": "sensorValueStorage", "serviceDefinition": "SensorValueStorageService", "conjugated": true }	
+				{ "portName": "orchestrationService", "serviceDefinition": "OrchestrationService", "consumer": true },	
+				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService", "consumer": true },
+				{ "portName": "sensorValueStorage", "serviceDefinition": "SensorValueStorageService", "consumer": true }	
 			]
 		},
 		
@@ -47,7 +47,7 @@
 			"systemName": "sensor_I1",
 			"metadata": { "sensorType": "Push-button", "location": "slider 1 front" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -55,7 +55,7 @@
 			"systemName": "sensor_I2",
 			"metadata": { "sensorType": "Push-button", "location": "slider 1 rear" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -63,7 +63,7 @@
 			"systemName": "sensor_I3",
 			"metadata": { "sensorType": "Push-button", "location": "slider 2 front" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -71,7 +71,7 @@
 			"systemName": "sensor_I4",
 			"metadata": { "sensorType": "Push-button", "location": "slider 2 rear" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -79,7 +79,7 @@
 			"systemName": "sensor_I5",
 			"metadata": { "sensorType": "Phototransistor", "location": "slider 1" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -87,7 +87,7 @@
 			"systemName": "sensor_I6",
 			"metadata": { "sensorType": "Phototransistor", "location": "milling machine" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -95,7 +95,7 @@
 			"systemName": "sensor_I7",
 			"metadata": { "sensorType": "Phototransistor", "location": "loading station" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -103,7 +103,7 @@
 			"systemName": "sensor_I8",
 			"metadata": { "sensorType": "Phototransistor", "location": "drilling machine" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -111,7 +111,7 @@
 			"systemName": "sensor_I9",
 			"metadata": { "sensorType": "Phototransistor", "location": "conveyor belt swap" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		},
@@ -119,7 +119,7 @@
 			"systemName": "sensor_I5_2",
 			"metadata": { "sensorType": "Push-button", "location": "slider 1" },
 			"ports": [
-				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "conjugated": true },	
+				{ "portName": "service_registry", "serviceDefinition": "Service Discovery", "consumer": true },	
 				{ "portName": "sensorValue", "serviceDefinition": "SensorValueService"}	
 			]
 		}
